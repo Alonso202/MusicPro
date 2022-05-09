@@ -5,4 +5,4 @@ from apiProductos.models import Producto
 class ProductoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Producto
-        fields = ['url', 'nombre','codigo', 'precio','serie_producto','marca']
+        fields = ['url', 'nombre','codigo', 'valor','serie_producto','marca']
