@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from apiProductos import views
+from MusicPro.app_api import views
 from django.conf import settings
 from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
+router.register(r'bodega',views.BodegaViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('api-auth', include('rest_framework.urls',namespace='rest_framework'))
 ]
 if settings.DEBUG:
