@@ -22,7 +22,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
-router.register(r'bodega',views.BodegaViewSet)
+router.register(r'bodega',views.BodegaViewSet),
+router.register(r'empleados',views.EmpleadoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
