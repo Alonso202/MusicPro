@@ -14,5 +14,5 @@ class Empleado (models.Model):
     password = models.CharField(max_length=30)
     puesto = models.IntegerField(choices= opciones_puesto)
     def __str__(self):
-        return self.nickname
+        return self.username
 

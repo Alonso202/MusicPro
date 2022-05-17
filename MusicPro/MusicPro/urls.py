@@ -22,17 +22,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from vistaCliente.views import tienda, carrito
+
 router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
-router.register(r'bodega',views.BodegaViewSet),
+router.register(r'bodega',views.BodegaViewSet)
 router.register(r'empleados',views.EmpleadoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth', include('rest_framework.urls',namespace='rest_framework')),
-    path('login', index, name = "login"),
+    path('login_Empleado', index, name = "login_Empleado"),
     path('tienda', tienda, name='tienda'),
     path('carrito', carrito, name='carrito'),
 ]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

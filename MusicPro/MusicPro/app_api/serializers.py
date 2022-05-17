@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from producto.models import Producto
 from bodega.models import Bodega
@@ -5,7 +6,7 @@ from VistaEmpleados.models import Empleado
 class ProductoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Producto
-        fields = ['url', 'nombre','codigo', 'valor','serie_producto','marca', 'imagen','tipoProd']
+        fields = ['url','id' ,'nombre','codigo', 'valor','serie_producto','marca', 'imagen', 'categoria']
 class BodegaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Bodega
