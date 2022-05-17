@@ -1,0 +1,338 @@
+/*fuentes*/
+@font-face {
+    font-family: "Newton Howard";
+    src: url("../fonts/Newton\ Howard\ Font.otf");
+
+    font-family: "Sono A";
+    src: url(../fonts/Sono-Regular.ttf);
+
+    font-family: "Sono B";
+    src: url(../fonts/Sono-SemiBold.ttf);
+
+    font-family: "Lemon Milk";
+    src: url(../fonts/LEMONMILK-Bold.otf);
+}
+
+
+/*Movimiento suave*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*Ajustes de body y configuracion de fuentes*/
+body{
+    height: 100%;
+    background-color: #ffffff;
+}
+
+/*Estilo barra navegador*/
+.navbar-nav{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    margin-right: auto;
+    font-size: 23px;
+}
+
+.navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav-item{
+    color: rgb(49, 49, 49);
+    font-size: 20px;
+    padding-left: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/*Logotipo cambio de tamano dependiendo de resoluciones*/
+@media (max-width: 990px){
+    .logo-grande{
+        display: none;
+    }
+    .navbar-brand img{
+        width: 65px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 2.6em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+}
+@media (min-width: 990px){
+    .logo-chico{
+        display: none;
+    }
+    .navbar-brand img{
+        display: block;
+        width: 240px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 3.5em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 0px);
+    background-size: cover;
+    background-position: center;
+    transition: all .1s ease-in-out;
+    background-image: url('../img/im1.jpg');
+    animation: banner 28s infinite linear;
+}
+
+.banner-content{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    background-color: rgba(41, 40, 40, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; 
+}
+
+@keyframes banner{
+    0%{
+        background-image: url('../img/im1.jpg');
+    }
+    25%{
+        background-image: url('../img/im1.jpg');
+    }
+
+    26%{
+        background-image: url('../img/im2.jpg');
+    }
+    50%{
+        background-image: url('../img/im2.jpg');
+    }
+
+    51%{
+        background-image: url('../img/im3.jpg');
+    }
+    75%{
+        background-image: url('../img/im3.jpg');
+    }
+
+    76%{
+        background-image: url('../img/im4.jpg');
+    }
+    100%{
+        background-image: url('../img/im4.jpg');
+    }
+}
+
+/*Producto*/
+.h2-productos{
+    color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    margin-bottom: 0px;
+    font-size: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.img-producto{
+    width: 100%;
+    height: 200px;
+    border-radius: 1em 1em 0 0;
+}
+
+.card-producto{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 40px;
+    border-radius: 0.8em;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.card-producto:hover{
+    background-color: rgb(117, 117, 117);
+    border: none;
+}
+
+.boton-producto{
+    background-color: rgb(0, 0, 0);
+    border-radius: 10em;
+    width: 80%;
+    margin-bottom: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.boton-producto:hover{
+    background-color:rgb(231, 231, 231);
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.nombre-producto{
+    font-size: 1.5em;
+    margin: 2px;
+    margin-top: 25px;
+}
+.marca-producto{
+    font-size: 1.1em;
+}
+
+.valor-producto{
+    font-size: 1.3em;
+    font-weight: 1000;
+    margin-bottom: 10px;
+}
+
+.card-body{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/*Pie de Pagina*/
+.pie-pagina{
+    padding-top: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.redes{
+    padding-top: 15px;
+}
+
+/*Filtrador*/
+.boton-filtrador:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.boton-filtrador:hover{
+    background-color: #ffffff;
+    color: rgb(53, 53, 53);
+    border-color: rgb(53, 53, 53);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+}
+.boton-filtrador{
+    margin-bottom: 0.5em;
+    border-radius: 10em;
+    font-size: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/*carrito--------------------------------------------------------------------*/
+
+.spad {
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+.cart-table {
+    margin-top: 54px;
+	margin-bottom: 54px;
+	overflow-y: auto;
+}
+.cart-table table {
+	width: 100%;
+}
+.cart-table thead {
+	background: #b9a280;
+	margin-bottom: 55px;
+}
+.cart-table thead th {
+	padding: 5px 25px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 14px;
+}
+.cart-table tbody td {
+	margin-top: 37px;
+}
+.cart-table .producto-th {
+	text-align: left;
+}
+.cart-table .producto-col {
+	display: table;
+}
+.cart-table .producto-col img {
+	display: table-cell;
+	max-width: 187px;
+}
+.cart-table .producto-col .pc-title {
+    padding-right: 35px;
+	padding-left: 35px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.cart-table .producto-col .pc-title h4 {
+	font-size: 18px;
+	font-weight: 400;
+}
+.cart-table .producto-col .pc-title a {
+	font-size: 12px;
+	color: #665945;
+}
+
+.justificado{
+    vertical-align: middle;
+}
+
+
+
+
+/*carrito botones*/
+.btn-continuar-compra {
+	background: #665945;
+    color: #ffffff;
+	padding: 21px 30px;
+	min-width: 260px;
+	font-size: 16px;
+}
+.btn-limpiar-carro {
+	min-width: 180px;
+	padding: 21px 30px;
+	background: #000000;
+	color: #ffffff;
+	margin-right: 17px;
+	font-size: 16px;
+}
+.btn{
+    margin-bottom: 1em;
+}
+.btn:hover {
+    color: #c0ac8d;
+}
+.cart-buttons {
+	margin-bottom: 50px;
+}
+.centralizacion{
+    text-align: center;
+}
+.btn-secondary{
+    border-radius: 5em;
+}
+.boton-grupo{
+    margin-top: 1em;
+}
+.badge{
+    margin-top: 0;
+    border-radius: 5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background: #FFF;
+    color: #000000;
+}
+.total-pago{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

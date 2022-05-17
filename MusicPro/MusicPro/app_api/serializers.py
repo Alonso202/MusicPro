@@ -5,7 +5,7 @@ from VistaEmpleados.models import Empleado
 class ProductoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Producto
-        fields = ['url', 'nombre','codigo', 'valor','serie_producto','marca', 'imagen']
+        fields = ['url', 'nombre','codigo', 'valor','serie_producto','marca', 'imagen','tipoProd']
 class BodegaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Bodega
