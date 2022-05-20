@@ -257,7 +257,8 @@ body{
 	font-size: 14px;
 }
 .cart-table tbody td {
-	margin-top: 37px;
+	margin-top: 20px;
+    margin-bottom: 20px;
 }
 .cart-table .producto-th {
 	text-align: left;
@@ -335,4 +336,14 @@ body{
 }
 .total-pago{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.titulo-vacio{
+    font-size: 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.imagen-vacio{
+    padding-bottom: 100px;
 }

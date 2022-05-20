@@ -40,7 +40,7 @@
                         <a class="hvr-grow nav-link mx-3 font-navbar" href="#about">ABOUT US</a>
                     </li>
                     <li class="nav-item">
-                        <a class="hvr-grow nav-link mx-3 font-navbar" href="{% url 'carrito' %}">CART <i class="bi bi-bag-fill"></i></a>
+                        <a class="hvr-grow nav-link mx-3 font-navbar" href="{% url 'carrito' %}">CART <i class="bi bi-bag-fill"><span class="badge"></span></i></a>
                     </li>
                 </ul>
             </div>
@@ -123,7 +123,7 @@
         <!--Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             Alonso Perez, Jonatan Pizarro & Armando Neira © 2022 Copyright:
-            <a class="text-white" href="#inicio">Music Pro</a>
+            <a class="text-white" href="{% url 'tienda' %}">Music Pro</a>
         </div>
     </footer>
 

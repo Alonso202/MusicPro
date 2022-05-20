@@ -1,4 +1,5 @@
 crearStorage();
+cantidadCarrito();
 
 function crearStorage(){
     if(localStorage.getItem('carrito')==null){
@@ -6,23 +7,13 @@ function crearStorage(){
     }
 }
 
-//BORRAR PRODUCTO CARRITO, PARAMETRO EN STRING
-function borrarProducto(idProducto){
+
+//CANTIDAD CARRITO
+function cantidadCarrito(){
     let arregloProductos = traerStorageCarrito();
-
-    let nuevoCarrito = []
-
-    for(let producto of arregloProductos)
-    {
-        if(producto.idP !== idProducto)
-        {
-            nuevoCarrito.push(producto)
-        }
-    }
-
-    nuevoCarrito = JSON.stringify(nuevoCarrito)
-    entregarStorageCarrito(nuevoCarrito)
-    console.log('Producto Borrado del Carrito')
+    let insignia = document.querySelector('span.badge')
+    
+    insignia.innerHTML = arregloProductos.length
 }
 
 //EVENTO CLICK PARA BOTONES
@@ -59,7 +50,9 @@ function agregarProducto(idProducto, nombre, marca, precio, cantidad, img){
         arregloProductos = JSON.stringify(arregloProductos)
         entregarStorageCarrito(arregloProductos)
         console.log('Producto Agregado')
-    }    
+    }   
+    
+    cantidadCarrito();
 }
 
 //VERIFICAR PRODUCTO CARRITO
@@ -85,37 +78,6 @@ function traerStorageCarrito(){
 function entregarStorageCarrito(datos){
     localStorage.setItem('carrito', datos)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //FILTRO DE PRODUCTOS
 $(document).ready(function(){
