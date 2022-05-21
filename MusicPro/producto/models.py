@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.utils import timezone
 # Create your models here.
@@ -16,6 +17,7 @@ class Producto (models.Model):
     fecha = models.DateTimeField(default=timezone.now)
     valor = models.IntegerField()
     imagen = models.ImageField(upload_to='img', null=True)
+    stock = models.IntegerField(default=0)
     categoria = models.IntegerField(choices=categoria,null=True)
     def __str__(self) :
         return self.nombre

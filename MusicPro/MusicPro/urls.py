@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from MusicPro.app_api import views
-from VistaEmpleados.views import index
+from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,7 +25,6 @@ from vistaCliente.views import tienda, carrito
 
 router = routers.DefaultRouter()
 router.register(r'productos', views.ProductoViewSet)
-router.register(r'bodega',views.BodegaViewSet)
 router.register(r'empleados',views.EmpleadoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,6 +33,10 @@ urlpatterns = [
     path('login_Empleado', index, name = "login_Empleado"),
     path('tienda', tienda, name='tienda'),
     path('carrito', carrito, name='carrito'),
+    path('vendedor',homeVendViewSet.mostrar,name='vendedor'),
+    path('vendedor#productos',homeVendViewSet.modificar,name='stock'),
+    path('bodeguero',homeBod,name='homeBod' ),
+    path('contador',homeCon,name= 'homeCon' ),
 ]
 
 if settings.DEBUG:

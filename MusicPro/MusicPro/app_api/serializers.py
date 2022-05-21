@@ -1,17 +1,12 @@
-
 from rest_framework import serializers
 from producto.models import Producto
-from bodega.models import Bodega
 from VistaEmpleados.models import Empleado
 class ProductoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Producto
-        fields = ['url','id' ,'nombre','codigo', 'valor','serie_producto','marca', 'imagen', 'categoria']
-class BodegaSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Bodega
-        fields = ['url','id_producto','stock']
+        fields = '__all__'
 class EmpleadoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Empleado
-        fields = ['url','username','email', 'puesto','nombre','rut']
+        fields = '__all__'
+        explude= 'password'

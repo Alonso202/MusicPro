@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'css/empleados.css' %}">
+        
+        <title>Sistema Vendedor</title>
+        <!-- Navigation-->
+      <nav class="navbar navborde navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#">
+              <img src='{% static "img/LOGO-FINAL-NEGRO.png" %}'width="auto" height="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#Pedidos">Pedidos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </head>
+    <body>
+        <div class="card card_productos hvr-fade hvr-buzz-out" id = "productos" >
+            <div class="card-body text-center">
+                <p>Productos</p>
+                <div class="row"  id="lista-producto">
+                <!--Producto-->
+                {% for producto in productos %}
+                    <div class="card card_producto hvr-fade hvr-buzz-out" style="width: 17rem;">
+                        <img class="img-producto card-img-top img-fluid" src="{{producto.imagen}}">
+                        <div class="card-body text-center">
+                            <h5 class="nombre_producto card-title" id = "nombre">{{producto.nombre}}</h5>
+                            <h6 class="stock_producto card-subtitle" id = "stock">El stock es: {{producto.stock}}</h6>
+                          
+                            <form method="" >
+                                
+                                <label for="cantidad">Ingrese cantidad</label>
+                                <input type="number" name="cantidad" id="cantidad">
+                                <br> 
+                                <button >Ingresar</button>
+                            </form>
+                        
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+      
+        
+       
+    </body>
+    <footer id="pie-pagina" class="bg-dark text-center text-white">
+        <!--Container -->
+        <div class="redes" style="background-color: rgba(0, 0, 0, 0.2);">
+            <!--Social-->
+            <section>
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://es-la.facebook.com/" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com" role="button" target="_blank"><i class="fab fa-google"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://cl.linkedin.com" role="button" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com" role="button" target="_blank"><i class="fab fa-github"></i></a>
+            </section>
+        </div>
+
+        <!--Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Alonso Perez, Jonatan Pizarro & Armando Neira © 2022 Copyright:
+            <a class="text-white" href="{% url 'tienda' %}">Music Pro</a>
+        </div>
+    </footer>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    <script src="../static/js/main.js"></script>
+</html>
