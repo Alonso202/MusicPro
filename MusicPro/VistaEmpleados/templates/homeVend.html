@@ -8,7 +8,7 @@
         
         <title>Sistema Vendedor</title>
         <!-- Navigation-->
-      <nav class="navbar navborde navbar-expand-lg navbar-light" id="mainNav">
+    <nav class="navbar navborde navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#">
               <img src='{% static "img/LOGO-FINAL-NEGRO.png" %}'width="auto" height="100">
@@ -37,23 +37,29 @@
                         <img class="img-producto card-img-top img-fluid" src="{{producto.imagen}}">
                         <div class="card-body text-center">
                             <h5 class="nombre_producto card-title" id = "nombre">{{producto.nombre}}</h5>
-                            <h6 class="stock_producto card-subtitle" id = "stock">El stock es: {{producto.stock}}</h6>
-                          
-                            <form method="" >
-                                
-                                <label for="cantidad">Ingrese cantidad</label>
-                                <input type="number" name="cantidad" id="cantidad">
-                                <br> 
-                                <button >Ingresar</button>
-                            </form>
-                        
+                            <h6 class="stock_producto card-subtitle" id = "stock">El stock es: {{producto.stock}}</h6>                   
                         </div>
                     </div>
                 {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
+        <div class="card card_productos" id="Pedidos">
+            <div class="lista_pedidos">
+                <table class="default">
+                    <thead>
+                        <th>ID Pedido</th>
+						<th>Pedidos</th>
+                        <th></th>
+                    </thead>
+                    <tr>
+                        <td></td>
+                        
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
       
         
        

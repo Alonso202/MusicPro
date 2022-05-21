@@ -4,7 +4,7 @@ import requests
 # Create your views here.
 def tienda(request):
 
-    url = 'http://127.0.0.1:8000/productos/'
+    url = 'http://127.0.0.1:8000/api/productos/'
     respuesta = requests.get(url, auth=('admin', 'admin'))
     datos = respuesta.json()
 

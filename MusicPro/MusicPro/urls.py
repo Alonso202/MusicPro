@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from MusicPro.app_api import views
-from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon
+from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,15 +28,15 @@ router.register(r'productos', views.ProductoViewSet)
 router.register(r'empleados',views.EmpleadoViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('api-auth', include('rest_framework.urls',namespace='rest_framework')),
     path('login_Empleado', index, name = "login_Empleado"),
-    path('tienda', tienda, name='tienda'),
+    path('', tienda, name='tienda'),
     path('carrito', carrito, name='carrito'),
     path('vendedor',homeVendViewSet.mostrar,name='vendedor'),
-    path('vendedor#productos',homeVendViewSet.modificar,name='stock'),
     path('bodeguero',homeBod,name='homeBod' ),
     path('contador',homeCon,name= 'homeCon' ),
+    path('vendedor/productos',stockProd,name= 'stockProd' ),
 ]
 
 if settings.DEBUG:
