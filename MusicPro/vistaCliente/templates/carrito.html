@@ -65,7 +65,16 @@
 			</div>
             <div class="row cart-buttons">
 				<div class="col">
-                    <button type="button" class="btn btn-continuar-compra">Continuar comprar</button>
+                    <form action="" method="post" name="formularioPedido">
+                        {% csrf_token %}
+                        
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" style="display: none;">
+                        <input type="text" name="valorTotal" id="valorTotal" style="display: none;">
+                        <input type="text" name="productosCarrito" id="productosCarrito" style="display: none;">
+                        <input type="text" name="estado" id="estado" style="display: none;">
+                        
+                        <button type="button" class="btn btn-continuar-compra" onclick="cambiandoEntradas()">Continuar comprar</button>
+                    </form>
 				</div>
 				<div class="col">
                     <button type="button" class="btn btn-limpiar-carro" onclick="borrarTodo()">Limpiar Carro</button>
@@ -106,7 +115,7 @@
         <!--Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             Alonso Perez, Jonatan Pizarro & Armando Neira © 2022 Copyright:
-            <a class="text-white" href="index.html#inicio">Music Pro</a>
+            <a class="text-white" href="{% url 'tienda' %}">Music Pro</a>
         </div>
     </footer>
 

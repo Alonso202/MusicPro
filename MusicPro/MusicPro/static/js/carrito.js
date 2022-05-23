@@ -98,3 +98,34 @@ function apiDolar(){
         hMoneda.innerText = 'USD'
     }) 
 }
+
+//CAMBIANDO LOS INPUTS
+function cambiandoEntradas(){
+    nombreUsuario = document.getElementById('nombreUsuario')
+    valorTotal = document.getElementById('valorTotal')
+    productosCarrito = document.getElementById('productosCarrito')
+    estado = document.getElementById('estado')
+
+    let productos = ''
+
+    let arregloProductos = traerStorageCarrito()
+
+    for(producto of arregloProductos){
+        productos = productos + producto.idP + ' '
+    }
+
+    nombreUsuario.value = 'Invitado'
+    valorTotal.value = valorTotalCarrito
+    productosCarrito.value = productos
+    estado.value = 'Pendiente'
+
+    if(arregloProductos.length == 0){
+        console.log('carro vacio mi vida')
+    }
+    else{
+        borrarTodo()
+        console.log('Hizo un pedido mi vida')
+        document.formularioPedido.submit() 
+    }
+    
+}

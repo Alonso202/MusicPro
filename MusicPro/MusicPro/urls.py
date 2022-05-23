@@ -24,6 +24,10 @@ from django.conf.urls.static import static
 from vistaCliente.views import tienda, carrito
 
 router = routers.DefaultRouter()
+
+router.register(r'pedidos', views.PedidoViewSet)
+#router.register(r'productoCarrito', views.ProductoCarritoViewSet)
+
 router.register(r'productos', views.ProductoViewSet)
 router.register(r'empleados',views.EmpleadoViewSet)
 urlpatterns = [
@@ -31,7 +35,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth', include('rest_framework.urls',namespace='rest_framework')),
     path('login_Empleado', index, name = "login_Empleado"),
-    path('', tienda, name='tienda'),
+    path('tienda', tienda, name='tienda'),
     path('carrito', carrito, name='carrito'),
     path('vendedor',homeVendViewSet.mostrar,name='vendedor'),
     path('bodeguero',homeBod,name='homeBod' ),
