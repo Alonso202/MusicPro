@@ -1,4 +1,7 @@
 
+.contenedor_body{
+  background-image: url(../img/background.webp);
+}
 body {
     
     margin: 0;

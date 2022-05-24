@@ -34,7 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth', include('rest_framework.urls',namespace='rest_framework')),
-    path('login_Empleado', index, name = "login_Empleado"),
+    path('login', index, name = "login"),
     path('tienda', tienda, name='tienda'),
     path('carrito', carrito, name='carrito'),
     path('vendedor',homeVendViewSet.mostrar,name='vendedor'),
