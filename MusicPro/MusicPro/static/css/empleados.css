@@ -133,5 +133,14 @@ body {
   }
   p{  
     font-size:2.5rem;
-
+  }
+.lista_pedidos{
+  padding: 0.5em;
+  min-width:50rem;
+  min-height: 30rem;
+  margin: 0.5em;
+  -webkit-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+  -moz-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+  box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+  align-items: center;
   }
