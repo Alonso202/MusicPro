@@ -1,5 +1,7 @@
 function login(){
-    fetch('http://127.0.0.1:8000/api/empleados/').then(respuesta => respuesta.json())
+    var credentials = btoa("admin:admin");
+    var auth = { "Authorization" :  `Basic ${credentials}`};
+    fetch('http://127.0.0.1:8000/api/empleados/',{ headers : auth }).then(respuesta => respuesta.json())
     .then(data => {
         let user = document.getElementById("username").value;
         let pass= document.getElementById('password').value;

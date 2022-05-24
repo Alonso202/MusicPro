@@ -24,4 +24,17 @@ class homeVendViewSet(viewsets.ViewSet):
         datos = respuesta.json()
         contexto = {'productos' : datos}
         return render(request,'homeVend.html',contexto)
-    
+
+def aceptar(request,id):
+    url= "http://127.0.0.1:8000/api/pedidos/"+str(id)+'/'
+    json = {"estado" : "Aprobado"}
+    response = requests.patch(url, auth=('admin','admin'), data = json)
+    datos= response.json()
+    return redirect("/pedidos")
+
+def rechazar(request,id):
+    url= "http://127.0.0.1:8000/api/pedidos/"+str(id)+'/'
+    json = {"estado" : "Rechazado"}
+    response = requests.patch(url, auth=('admin','admin'), data = json)
+    datos= response.json()
+    return redirect("/pedidos")

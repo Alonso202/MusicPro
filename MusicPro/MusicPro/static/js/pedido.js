@@ -1,31 +1,15 @@
-function login(){
-    fetch('http://127.0.0.1:8000/api/pedidos/').then(respuesta => respuesta.json())
-    .then(data => {
-        let id = document.querySelectorAll('.pedido_id');
-        for( pedido of data){            
-                if(pedido.id == id){
-                    for (let productos of pedido.productoCarrito){
-                        console.log(productos.nombre)
-                    }
-                }
-        }
-        })
+function mostrarProductos(arregloProductos){
+    let mostrar = document.getElementById("id01").style.display='block'
+    let etiqueta = document.querySelector(".mostrar")
+    let contenedor = ''
+    for (let producto of arregloProductos){
+        contenedor=contenedor+'<tr><td class="producto-col">'+producto.nombre+'</td><td class="precio-col">'+producto.valor+'</td></tr>'
         
+    }
+    etiqueta.innerHTML = contenedor
+    return (arregloProductos , mostrar)
+
 }
-
-
-
-function mostrarProductos(){
-    fetch('http://127.0.0.1:8000/api/pedidos/').then(respuesta => respuesta.json())
-    .then(data => {
-        let id = document.getElementById("pedido_id").innerText;
-        for( pedido of data){            
-                if(pedido.id == id){
-                    for (let productos of pedido.productoCarrito){
-                        console.log(productos.nombre)
-                    }
-                }
-        }
-        })
-        
+function mandarBodega(){
+     console.log("Mandando información")
 }
