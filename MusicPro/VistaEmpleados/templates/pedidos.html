@@ -40,15 +40,16 @@
                     
                     <tbody>
                         {% for pedido in pedidos %}
-                        <tr>                            
-                            <td id="pedido_id">{{pedido.id}}</td>
-                            <td>${{pedido.valorTotal}}</td>                                                            
-                            <td><button onclick="mostrarProductos({{pedido.productoCarrito}})">Ver Productos</button></td>
-                            <td>{{pedido.estado}}</td>
-                            <td><a onclick="mandarBodega()" href="{% url 'aceptar' pedido.id %}">Aprobar</a></td>
-                            <td><a  href="{% url 'rechazar' pedido.id %}">Rechazar</a></td>
-                        </tr>
-
+                        {% if pedido.estado != "Despachado" %}
+                            <tr>                            
+                                <td id="pedido_id">{{pedido.id}}</td>
+                                <td>${{pedido.valorTotal}}</td>                                                            
+                                <td><button onclick="mostrarProductos({{pedido.productoCarrito}})">Ver Productos</button></td>
+                                <td>{{pedido.estado}}</td>
+                                <td><a onclick="mandarBodega()" href="{% url 'aceptar' pedido.id %}">Aprobar</a></td>
+                                <td><a  href="{% url 'rechazar' pedido.id %}">Rechazar</a></td>
+                            </tr>
+                        {% endif %}    
                         {% endfor %}
                     </tbody>
                     
