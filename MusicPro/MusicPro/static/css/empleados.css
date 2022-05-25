@@ -1,4 +1,8 @@
-
+h3{
+  align-items: center;
+  position: center;
+  text-align: center;
+}
 .contenedor_body{
   background-image: url(../img/background.webp);
 }

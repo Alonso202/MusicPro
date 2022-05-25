@@ -27,24 +27,25 @@
     </head>
     <body>
         
-        <div class="card card_productos" id="Pedidos">
+        <div class="card card_productos" id="Pedidos" style="min-height: 20rem; text-align: center;">
+            <h3>Pedidos</h3>
                 <table >
                     <thead>
                         <tr>
                             <th>ID Pedido</th>
                             <th>Valor Total </th>
                             <th>Productos</th>
-                            <th></th>
+                            <th>Estado Pedido</th>
                         </tr>
                     </thead>
                     
                     <tbody>
                         {% for pedido in pedidos %}
-                        {% if pedido.estado != "Despachado" %}
+                        {% if pedido.estado == "Pendiente" %}
                             <tr>                            
                                 <td id="pedido_id">{{pedido.id}}</td>
-                                <td>${{pedido.valorTotal}}</td>                                                            
-                                <td><button onclick="mostrarProductos({{pedido.productoCarrito}})">Ver Productos</button></td>
+                                <td>${{pedido.valorTotal}}</td>                                                       
+                                <td><button onclick="listaProductos({{pedido.productoCarrito}})">Ver Productos</button></td>
                                 <td>{{pedido.estado}}</td>
                                 <td><a onclick="mandarBodega()" href="{% url 'aceptar' pedido.id %}">Aprobar</a></td>
                                 <td><a  href="{% url 'rechazar' pedido.id %}">Rechazar</a></td>
@@ -70,6 +71,7 @@
                                 <thead>
                                     <tr>
                                         <th class="producto-th">Producto</th>
+                                        <th></th>
                                         <th>Precio</th>
                                     </tr>
 
@@ -84,7 +86,64 @@
                 
             </div>
         </div>
+        <div class="card card_productos" id="Pedidos" style="min-height: 20rem; text-align: center;">
+        <h3>Envío a Cliente</h3>
+            <table >
+                <thead>
+                    <tr>
+                        <th>ID Pedido</th>
+                        <th>Valor Total </th>
+                        <th>Productos</th>
+                        <th>Estado Pedido</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for pedido in pedidos %}
+                    {% if pedido.estado == "Despacho a Vendedor" %}
+                        <tr>                            
+                            <td id="pedido_id">{{pedido.id}}</td>
+                            <td>${{pedido.valorTotal}}</td>                                                            
+                            <td><button onclick="mostrarProductosDespachados({{pedido.productoCarrito}})">Ver Productos</button></td>
+                            <td>{{pedido.estado}}</td>
+                            <td><a onclick="enviarPedido()" href="{% url 'despachadoCliente' pedido.id %}">Envíar a Cliente</a></td>
+                        </tr>
+                    {% endif %}    
+                    {% endfor %}
+                </tbody>
+                
+            </table>
         
+    </div>
+    <div id="id02" class="w3-modal mb-2">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <header class="w3-container w3-white"> 
+                <span onclick="document.getElementById('id02').style.display='none'" 
+                class="w3-button w3-white w3-xlarge w3-display-topright">&times;</span>
+                <h2 class="pl-5 pt-3">Productos</h2>
+            </header>
+            <div class="spad">
+                <div class="container">
+                    <div class="cart-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="producto-th">Producto</th>
+                                    <th>Precio</th>
+                                </tr>
+
+                            </thead>
+                            <tbody class="centralizacion mostrarPedidos">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
        
     </body>
     <footer id="pie-pagina" class="bg-dark text-center text-white">
