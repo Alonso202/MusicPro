@@ -189,7 +189,7 @@ body{
 
 
 .boton-despachar{
-    background-color: rgb(53, 53, 53);
+    background-color: #83745d;
     color: #fff;
     border: 2px solid #b9a280;
 }
@@ -199,8 +199,14 @@ body{
 }
 
 .boton-despachado{
-    background-color: rgb(53, 53, 53);
+    background-color: #83745d;
     color: #fff;
+    text-decoration: none;
+}
+.boton-despachado:hover{
+    background-color: #83745d;
+    color: #fff;
+    text-decoration: underline;
 }
 
 

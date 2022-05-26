@@ -41,7 +41,7 @@ function poblarCarrito(){
         if(arregloProductos.length == 1)
         {
             let todoSpad = document.querySelector('.spad')
-            todoSpad.setAttribute('style', 'padding-bottom: 237px;')
+            todoSpad.setAttribute('style', 'padding-bottom: 290px;')
         }
     }
 }
@@ -66,7 +66,7 @@ function borrarProducto(idProducto){
 
     cantidadCarrito();
     poblarCarrito();
-    document.querySelector('.total-pago h2 .moneda').innerText = 'CLP'
+    document.querySelector('.total-pago h2 .moneda').innerText = ' CLP'
     valorTotalCarrito = parseInt(document.querySelector('.total-pago h2 span').innerText)
 }
 
@@ -80,7 +80,7 @@ function borrarTodo(){
 
     console.log('Se limpio el carrito')
     valorTotalCarrito = parseInt(document.querySelector('.total-pago h2 span').innerText)
-    document.querySelector('.total-pago h2 .moneda').innerText = 'CLP'
+    document.querySelector('.total-pago h2 .moneda').innerText = ' CLP'
 }
 
 //FUNCION API MONEDA DOLAR
@@ -95,7 +95,7 @@ function apiDolar(){
 
 
         hValorTotal.innerText = valorEnDolar
-        hMoneda.innerText = 'USD'
+        hMoneda.innerText = ' USD'
     }) 
 }
 

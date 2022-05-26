@@ -148,14 +148,14 @@ body{
 
 .img-producto{
     width: 100%;
-    height: 200px;
-    border-radius: 1em 1em 0 0;
+    height: auto;
+    border-radius: 0em 0em 0 0;
 }
 
 .card-producto{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 40px;
-    border-radius: 0.8em;
+    border-radius: 1.5em;
     border: none;
     background-color: rgb(255, 255, 255);
     color: black;
@@ -300,31 +300,50 @@ body{
 	min-width: 260px;
 	font-size: 16px;
 }
+.btn-continuar-compra:hover{
+	background: #e9dac6;
+    color: #ffffff;
+	padding: 21px 30px;
+	min-width: 260px;
+	font-size: 16px;
+}
 .btn-limpiar-carro {
 	min-width: 180px;
 	padding: 21px 30px;
 	background: #000000;
 	color: #ffffff;
-	margin-right: 17px;
+	font-size: 16px;
+}
+.btn-limpiar-carro:hover{
+	min-width: 180px;
+	padding: 21px 30px;
+	background: #d1d1d1;
+	color: #fff;
 	font-size: 16px;
 }
 .btn{
     margin-bottom: 1em;
 }
 .btn:hover {
-    color: #c0ac8d;
+    color: rgb(53, 53, 53);
 }
 .cart-buttons {
 	margin-bottom: 50px;
 }
 .centralizacion{
     text-align: center;
+    justify-content: center;
+    justify-items: center;
 }
 .btn-secondary{
     border-radius: 5em;
 }
 .boton-grupo{
     margin-top: 1em;
+}
+.boton-grupo {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .badge{
     margin-top: 0;
@@ -334,8 +353,33 @@ body{
     background: #FFF;
     color: #000000;
 }
-.total-pago{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.total-pago, h2{
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    margin-top: 0.35em;
+    font-family: "Lemon Milk";
+    font-size: 1.5rem;
+}
+
+.btn-cambio-moneda{
+    background: #61594f;
+    color: #ffffff;
+	padding: 21px 30px;
+	min-width: 260px;
+	font-size: 16px;
+}
+.btn-cambio-moneda:hover{
+    background: #e9dac6;
+    color: #473e31;
+	padding: 21px 30px;
+	min-width: 260px;
+	font-size: 16px;
+}
+
+.fuente-botones-carrito{
+    font-weight: bold;
 }
 
 .titulo-vacio{

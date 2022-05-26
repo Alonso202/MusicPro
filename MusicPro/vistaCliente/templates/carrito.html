@@ -63,7 +63,7 @@
 					</tbody>	
 				</table>
 			</div>
-            <div class="row cart-buttons">
+            <div class="row cart-buttons centralizacion">
 				<div class="col">
                     <form action="" method="post" name="formularioPedido">
                         {% csrf_token %}
@@ -73,17 +73,17 @@
                         <input type="text" name="productosCarrito" id="productosCarrito" style="display: none;">
                         <input type="text" name="estado" id="estado" style="display: none;">
                         
-                        <button type="button" class="btn btn-continuar-compra" onclick="cambiandoEntradas()">Continuar comprar</button>
+                        <button type="button" class="btn btn-continuar-compra fuente-botones-carrito" onclick="cambiandoEntradas()">Continuar comprar</button>
                     </form>
 				</div>
 				<div class="col">
-                    <button type="button" class="btn btn-limpiar-carro" onclick="borrarTodo()">Limpiar Carro</button>
+                    <button type="button" class="btn btn-limpiar-carro fuente-botones-carrito" onclick="borrarTodo()">Limpiar Carro</button>
 				</div>
                 <div class="col total-pago">
-                    <h2>Total: $ <span>0</span> <span class="moneda">CLP</span></h1>
+                    <h2>Total: $ <span>0</span> <span class="moneda centralizacion">CLP</span></h1>
 				</div>
                 <div class="col cambio-moneda">
-                    <button type="button" class="btn btn-cambio-moneda" onclick="apiDolar()">Convertir a Dolares</button>
+                    <button type="button" class="btn btn-cambio-moneda fuente-botones-carrito" onclick="apiDolar()">Convertir a Dolares</button>
 				</div>
 
 			</div>
