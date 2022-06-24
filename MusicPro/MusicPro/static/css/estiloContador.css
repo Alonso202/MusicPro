@@ -1,0 +1,198 @@
+/*fuentes*/
+@font-face {
+    font-family: "Newton Howard";
+    src: url("../fonts/Newton\ Howard\ Font.otf");
+
+    font-family: "Sono A";
+    src: url(../fonts/Sono-Regular.ttf);
+
+    font-family: "Sono B";
+    src: url(../fonts/Sono-SemiBold.ttf);
+
+    font-family: "Lemon Milk";
+    src: url(../fonts/LEMONMILK-Bold.otf);
+}
+
+
+/*Movimiento suave*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*Ajustes de body y configuracion de fuentes*/
+body{
+    height: 100%;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/*Estilo barra navegador*/
+.navbar-nav{
+    margin-left: auto;
+}
+
+.navbar-brand{
+    padding: 0 0 0 2em;
+    margin-right: auto;
+    font-size: 23px;
+}
+
+.navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav-item{
+    padding: 0 2em 0 0;
+    color: rgb(49, 49, 49);
+    font-size: 20px;
+    padding-left: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*navbar*/
+@media (max-width: 990px){
+    .logo-grande{
+        display: none;
+    }
+    .navbar-brand img{
+        width: 65px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 2.6em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+}
+@media (min-width: 990px){
+    .logo-chico{
+        display: none;
+    }
+    .navbar-brand img{
+        display: block;
+        width: 240px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 3.5em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Ordenes Tabla--------------------------------------------------------*/
+
+.centralizacion{
+    text-align: center;
+}
+.ordenes-spad {
+	padding-top: 100px;
+	padding-bottom: 80px;
+}
+
+.cart-table {
+    margin-top: 54px;
+	margin-bottom: 54px;
+	overflow-y: auto;
+}
+.cart-table table {
+	width: 100%;
+}
+.cart-table thead {
+	background: #b9a280;
+	margin-bottom: 55px;
+}
+.cart-table thead th {
+	padding: 5px 25px;
+	text-align: center;
+	font-weight: 400;
+	font-size: 14px;
+}
+.cart-table tbody td {
+	margin-top: 20px;
+    margin-bottom: 20px;
+}
+.cart-table .producto-th {
+	text-align: left;
+}
+.cart-table .producto-col {
+	display: table;
+}
+.cart-table .producto-col img {
+	display: table-cell;
+	max-width: 187px;
+}
+.cart-table .producto-col .pc-title {
+    padding-right: 35px;
+	padding-left: 35px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.cart-table .producto-col .pc-title a {
+	font-size: 12px;
+	color: #665945;
+}
+
+
+
+.orden-pedido{
+    padding: 2em;
+}
+
+
+
+.button{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 1em;
+    border: none;
+    color: white;
+    padding: 5px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.boton-recibir{
+    background-color: #83745d;
+    color: #fff;
+    border: 2px solid #b9a280;
+}
+.boton-recibir:hover{
+    background-color: #83745d;
+    color: rgb(255, 255, 255);
+}
+
+.boton-recibido{
+    background-color: #83745d;
+    color: #fff;
+    text-decoration: none;
+}
+.boton-recibido:hover{
+    background-color: #83745d;
+    color: #fff;
+    text-decoration: underline;
+}

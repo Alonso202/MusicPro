@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from MusicPro.app_api import views
-from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd,pedidos,aceptar,rechazar,despachado,despachadoCliente
+from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd,pedidos,aceptar,rechazar,despachado,despachadoCliente,recibido
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -45,7 +45,8 @@ urlpatterns = [
     path('aceptar/<int:id>/',aceptar,name="aceptar"),
     path('rechazar/<int:id>/',rechazar,name="rechazar"),
     path('despachado/<int:id>/',despachado,name="despachado"),
-    path('despachadoCliente/<int:id>/',despachadoCliente,name="despachadoCliente")
+    path('despachadoCliente/<int:id>/',despachadoCliente,name="despachadoCliente"),
+    path('recibido/<int:id>/',recibido,name="recibido")
 ]
 
 if settings.DEBUG:

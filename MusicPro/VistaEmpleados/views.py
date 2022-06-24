@@ -14,7 +14,12 @@ def homeBod(request):
     return render(request,'homeBod.html',contexto)
 
 def homeCon(request):
-    return render(request,'homeCon.html')
+    url = 'http://127.0.0.1:8000/api/pedidos/'
+    respuesta = requests.get(url, auth=('admin', 'admin'))
+    datos = respuesta.json()
+    contexto = {'pedidos' : datos}
+    return render(request,'homeCon.html',contexto)
+    
 def stockProd(request):
     return render(request,'stockProd.html')
 
@@ -59,3 +64,10 @@ def despachado(request,id):
     response = requests.patch(url, auth=('admin','admin'), data = json)
     datos= response.json()
     return redirect("/bodeguero")
+
+def recibido(request,id):
+    url= "http://127.0.0.1:8000/api/pedidos/"+str(id)+'/'
+    json = {"estado" : "Recibido a Cliente"}
+    response = requests.patch(url, auth=('admin','admin'), data = json)
+    datos= response.json()
+    return redirect("/contador")
