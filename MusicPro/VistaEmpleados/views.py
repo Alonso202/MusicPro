@@ -87,7 +87,7 @@ def recibido(request,id):
     response = requests.patch(url, auth=('admin','admin'), data = json)
     datos= response.json()
     return redirect("/contador")
-<<<<<<< HEAD
+
 
 def pagado(request,id):
     url= "http://127.0.0.1:8000/api/pedidos/"+str(id)+'/'
@@ -95,7 +95,7 @@ def pagado(request,id):
     response = requests.patch(url, auth=('admin','admin'), data = json)
     datos= response.json()
     return redirect("/tienda")
-=======
+
 def authLogin(request):
     if request.method=='POST': 
         usu = request.POST['usu']
@@ -113,4 +113,4 @@ def authLogin(request):
                 return render(request, 'http://127.0.0.1:8000/contador')                        
         else:
             return redirect('http://127.0.0.1:8000/tienda')
->>>>>>> b46e5db94bbe6be544a6821462105d59a2a3d512
+

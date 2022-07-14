@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
 from MusicPro.app_api import views
-<<<<<<< HEAD
+
 from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd,pedidos,aceptar,rechazar,despachado,despachadoCliente,recibido,pagado
-=======
+
 from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd,pedidos,aceptar,rechazar,despachado,despachadoCliente,recibido,authLogin
->>>>>>> b46e5db94bbe6be544a6821462105d59a2a3d512
+
 from django.conf import settings
 from django.conf.urls.static import static
 
