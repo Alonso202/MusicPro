@@ -1,4 +1,5 @@
-function login(){
+function authLogin(){
+    var log=  'no logeado';
     var credentials = btoa("admin:admin");
     var auth = { "Authorization" :  `Basic ${credentials}`};
     fetch('http://127.0.0.1:8000/api/empleados/',{ headers : auth }).then(respuesta => respuesta.json())
@@ -8,6 +9,7 @@ function login(){
         for( usuario of data){
             if(usuario.username == user && usuario.password == pass ){
                 console.log("Logeado")
+                log='logeado';
                 if(usuario.puesto == 1){
                     window.location = "http://127.0.0.1:8000/bodeguero";
                 }
@@ -19,8 +21,14 @@ function login(){
                 }
             }
             else{
+                
                 console.log("Datos no coinciden")
+                
             }
+        
+            }
+            if(log == 'no logeado' ){
+                window.alert('datos incorrectos')
             }
         })
 }
