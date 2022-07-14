@@ -117,13 +117,12 @@ function cambiandoEntradas(){
     nombreUsuario.value = 'Invitado'
     valorTotal.value = valorTotalCarrito
     productosCarrito.value = productos
-    estado.value = 'Pendiente'
+    estado.value = 'Pagado'
 
     if(arregloProductos.length == 0){
         console.log('carro vacio mi vida')
     }
     else{
-        borrarTodo()
         console.log('Hizo un pedido mi vida')
         document.formularioPedido.submit() 
     }

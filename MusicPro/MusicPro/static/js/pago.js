@@ -24,3 +24,13 @@ for (producto of arregloProductos){
 }
 console.log(totalCarrito)
 document.getElementById("total-pedido").innerHTML=totalCarrito
+
+
+function borrarTodo(){
+    let carritoVacio = []
+    carritoVacio = JSON.stringify(carritoVacio)
+    entregarStorageCarrito(carritoVacio)
+    cantidadCarrito();
+
+    console.log('Se limpio el carrito')
+}

@@ -39,7 +39,7 @@ def carrito(request):
                 productoCarrito.save()
                 pedido.productoCarrito.add(productoCarrito)
 
-        return redirect('tienda')
+        return redirect('pago')
 
 
     return render(request,'carrito.html')

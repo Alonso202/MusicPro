@@ -71,3 +71,10 @@ def recibido(request,id):
     response = requests.patch(url, auth=('admin','admin'), data = json)
     datos= response.json()
     return redirect("/contador")
+
+def pagado(request,id):
+    url= "http://127.0.0.1:8000/api/pedidos/"+str(id)+'/'
+    json = {"estado" : "Pagado"}
+    response = requests.patch(url, auth=('admin','admin'), data = json)
+    datos= response.json()
+    return redirect("/tienda")

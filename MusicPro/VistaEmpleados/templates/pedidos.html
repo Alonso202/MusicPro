@@ -42,7 +42,7 @@
                     
                     <tbody>
                         {% for pedido in pedidos %}
-                        {% if pedido.estado == "Pendiente" %}
+                        {% if pedido.estado == "Pagado" %}
                             <tr>                            
                                 <td id="pedido_id">{{pedido.id}}</td>
                                 <td>${{pedido.valorTotal}}</td>                                                       

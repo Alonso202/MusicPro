@@ -1,0 +1,202 @@
+h3{
+    align-items: center;
+    position: center;
+    text-align: center;
+  }
+body{
+    height: 100%;
+    background-image: url('../img/background.webp');
+}
+/*Estilo barra navegador*/
+.navbar-nav{
+    margin-left: auto;
+  }
+  
+  .navbar-brand{
+    margin-right: auto;
+    font-size: 23px;
+  }
+  
+  .navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .nav-item{
+    color: rgb(49, 49, 49);
+    font-size: 20px;
+    padding-left: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  
+  /*Logotipo cambio de tamano dependiendo de resoluciones*/
+  @media (max-width: 990px){
+    .logo-grande{
+        display: none;
+    }
+    .navbar-brand img{
+        width: 65px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 2.6em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+  }
+  @media (min-width: 990px){
+    .logo-chico{
+        display: none;
+    }
+    .navbar-brand img{
+        display: block;
+        width: 240px;
+        height: auto;
+    }
+    .banner-content h1{
+        font-size: 3.5em;
+        color: rgb(255, 255, 255);
+        font-family: "Lemon Milk";
+    }
+  }
+  
+  
+    .contenedor-login {
+      width: 320px;
+      height: 420px;
+      background: #000;
+      color: #fff;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      box-sizing: border-box;
+      padding: 70px 30px;
+    }
+    
+    .contenedor-login .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: -50px;
+      left: calc(50% - 50px);
+    }
+    
+    .contenedor-login h1 {
+      margin: 0;
+      padding: 0 0 20px;
+      text-align: center;
+      font-size: 22px;
+    }
+    
+    .contenedor-login label {
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      display: block;
+    }
+    
+    .contenedor-login input {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .contenedor-login input[type="text"], .contenedor-login input[type="password"] {
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      font-size: 16px;
+    }
+    
+    .contenedor-login input[type="submit"] {
+      border: none;
+      outline: none;
+      height: 40px;
+      background: #b80f22;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 20px;
+    }
+    
+    .contenedor-login input[type="submit"]:hover {
+      cursor: pointer;
+      background: #ffc107;
+      color: #000;
+    }
+    
+    .contenedor-login a {
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 20px;
+      color: darkgrey;
+    }
+    
+    .contenedor-login a:hover {
+      color: #fff;
+    }
+    .card_producto img{
+      margin-top: 0.5rem;
+      width: 2800px;
+      height: 200px;
+    }
+   
+    
+    .card_producto label{
+      font-size: small;
+      margin: 3px;
+    }
+    .card_productos{  
+      margin: 50px;
+      max-width: 1000rem;
+      max-height: 1000rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 10rem;
+      padding-right: 10rem;
+      -webkit-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+      -moz-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+      box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+    }
+    .card_producto{
+      padding: 0.5em;
+      min-width:50rem;
+      min-height: 30rem;
+      margin: 0.5em;
+      -webkit-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+      -moz-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+      box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+      align-items: center;
+    }
+  .row{
+    align-items: center;
+  }
+  button{
+      border-radius: 1rem;
+      height: 30px;
+      font-size: 18px;
+      margin-top: 1rem;  
+      border: none;
+      width: 13rem;
+      color: #000;
+      background-color: rgb(70, 69, 69);
+  }
+  p{  
+    font-size:2.5rem;
+  }
+  .lista_pedidos{
+    padding: 0.5em;
+    min-width:50rem;
+    min-height: 30rem;
+    margin: 0.5em;
+    -webkit-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+    -moz-box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+    box-shadow: 4px 8px 9px -4px rgba(0,0,0,1);
+    align-items: center;
+  }

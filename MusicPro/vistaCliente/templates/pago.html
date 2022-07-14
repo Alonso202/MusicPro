@@ -37,33 +37,41 @@
                     <div class="col">
                     <h4>Total Pedido: CLP $<span id="total-pedido"></span></h4>
                     <h4>Total Pedido: Dolar $<span class="total-pedido-dolar"></span></h4>
-
-                    1 of 2aaaaaaaa
                     </div>
                     <div class="col">
-                        <script src="https://www.paypal.com/sdk/js?client-id=ASCMzYb-deg37uJVSsktpLRxpfqub5XXQ0op6ezWoi0WqQRqJXXNAhR6nW0BfkfThTb8AiaQt1N5wYIl&currency=USD"></script>
-                        <!-- Set up a container element for the button -->
-                        <div id="paypal-button-container"></div>
-                        <script>
-                            paypal.Buttons({
-                                createOrder: (data, actions) => {
-                                    return actions.order.create({
-                                        purchase_units: [{
-                                            amount: {
-                                                value: totalCarritoUSD
-                                            }
-                                        }]
-                                    });
-                                },
-                                onApprove: (data, actions) => {
-                                    return actions.order.capture().then(function(orderData) {
-                                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                                        const transaction = orderData.purchase_units[0].payments.captures[0];
-                                        alert("Compra completa satisfactoriamente");document.location.href="{% url 'carrito' %}";
-                                    });
-                                }
-                            }).render('#paypal-button-container');
-                        </script>
+                            <script src="https://www.paypal.com/sdk/js?client-id=ASCMzYb-deg37uJVSsktpLRxpfqub5XXQ0op6ezWoi0WqQRqJXXNAhR6nW0BfkfThTb8AiaQt1N5wYIl&currency=USD"></script>
+                            <!-- Set up a container element for the button -->
+                            <div id="paypal-button-container"></div>
+                            <script>
+                                paypal.Buttons({
+                                    createOrder: (data, actions) => {
+                                        return actions.order.create({
+                                            purchase_units: [{
+                                                amount: {
+                                                    value: totalCarritoUSD
+                                                }
+                                            }]
+                                        });
+                                    },
+                                    onApprove: (data, actions) => {
+                                        return actions.order.capture().then(function(orderData) {
+                                            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                            const transaction = orderData.purchase_units[0].payments.captures[0];
+                                            Swal.fire({
+                                                text: "Compra realizada exitosamente",
+                                                icon: 'success',
+                                                confirmButtonColor: '#3085d6',
+                                                confirmButtonText: 'OK'
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {       
+                                                    document.location.href="{% url 'tienda' %}";
+                                                    borrarTodo()
+                                                }
+                                            })
+                                        });
+                                    }
+                                }).render('#paypal-button-container');
+                            </script>  
                     </div>
                 </div>    
     </div>
@@ -100,8 +108,10 @@
     </footer>
 
     <!--JS-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js'%}"></script>
     <script src="{% static 'js/pago.js'%}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
