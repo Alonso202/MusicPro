@@ -7,24 +7,27 @@
     <link  href= '{% static "css/empleados.css" %}' rel = 'stylesheet'/>
     <title>Inicio de sesión</title>
 </head>
-<body class="contenedor_body"> 
-
+<body > 
+    
+    <div class="contenedor__todo">
     <div class="contenedor-login">
       <h1>Inicia sesión</h1>
       
       <img src='{% static "img/logo-guitarra-blanco.png" %}' style="background-color: red;" class="avatar" alt="Avatar Image">
-      <for method="POST">
+      <form method="POST">
+        {% csrf_token %}
         <!-- USERNAME INPUT -->
-        <label for="username">Nombre de usuario</label>
-        <input type="text" id="username"placeholder="Ingrese Nombre de usuario">
+        <label for="usu">Nombre de usuario</label>
+        <input type="text"  name ='usu' id="usu"placeholder="Ingrese Nombre de usuario">
         <!-- PASSWORD INPUT -->
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" placeholder="Ingrese Contraseña">     
-        <input type="submit"  onclick="login()" value="Entrar">
+        <label for="passw">Contraseña</label>
+        <input type="password" name ='passw' id="passw" placeholder="Ingrese Contraseña">     
+        <button type="submit" value="Entrar">Entrar</button>
         
         <a href="#">¿Olvidaste tu Contraseña?</a><br>
       </form>
     </div>
+  </div>
   </body>
   <script src="../static/js/empleado.js"></script>
 </html> 
