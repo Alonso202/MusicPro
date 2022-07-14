@@ -43,3 +43,9 @@ def carrito(request):
 
 
     return render(request,'carrito.html')
+
+def pago(request):
+    url = 'http://127.0.0.1:8000/api/productos/'
+    respuesta = requests.get(url, auth=('admin', 'admin'))
+    datos = respuesta.json()
+    return render(request,'pago.html')

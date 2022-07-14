@@ -21,7 +21,7 @@ from VistaEmpleados.views import index,homeVendViewSet,homeBod,homeCon,stockProd
 from django.conf import settings
 from django.conf.urls.static import static
 
-from vistaCliente.views import tienda, carrito
+from vistaCliente.views import tienda, carrito, pago
 
 router = routers.DefaultRouter()
 
@@ -47,7 +47,8 @@ urlpatterns = [
     path('rechazar/<int:id>/',rechazar,name="rechazar"),
     path('despachado/<int:id>/',despachado,name="despachado"),
     path('despachadoCliente/<int:id>/',despachadoCliente,name="despachadoCliente"),
-    path('recibido/<int:id>/',recibido,name="recibido")
+    path('recibido/<int:id>/',recibido,name="recibido"),
+    path('pago',pago, name='pago')
 ]
 
 if settings.DEBUG:
