@@ -1,7 +1,5 @@
-# MusicPro
-
 ## Usuarios
-### Vendedor
+- ### Vendedor
 - user: alo.perezm 
 - pass: contra123
 
@@ -17,6 +15,7 @@
 - user: Admin
 - pass: Admin
 
-## PayPal
+### PayPal
 - Correo: sb-pre43s18655763@personal.example.com
 - Contrasena: 876zZY_59
+- Web: www.sandbox.paypal.com
